@@ -11,6 +11,7 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		13BDDAFC2C5358E100B59D14 /* AboutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BDDAFB2C5358E100B59D14 /* AboutListView.swift */; };
 		13BDDAFE2C535CC200B59D14 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BDDAFD2C535CC200B59D14 /* AboutScreen.swift */; };
+		13EAD8972C566B280033C6AA /* ArticlesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EAD8962C566B280033C6AA /* ArticlesScreen.swift */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		299BF0434140A8517F452277 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1B2C4F4D1D14D27628CDE9 /* Pods_iosApp.framework */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
@@ -22,6 +23,7 @@
 		0D1B2C4F4D1D14D27628CDE9 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BDDAFB2C5358E100B59D14 /* AboutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutListView.swift; sourceTree = "<group>"; };
 		13BDDAFD2C535CC200B59D14 /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
+		13EAD8962C566B280033C6AA /* ArticlesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesScreen.swift; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		2ED91E7C90C4575012B98038 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +50,16 @@
 				058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		13EAD8952C566AFB0033C6AA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				13BDDAFB2C5358E100B59D14 /* AboutListView.swift */,
+				13BDDAFD2C535CC200B59D14 /* AboutScreen.swift */,
+				13EAD8962C566B280033C6AA /* ArticlesScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		49717611F56F029608679619 /* Pods */ = {
@@ -80,13 +92,12 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				13EAD8952C566AFB0033C6AA /* Screens */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
-				13BDDAFB2C5358E100B59D14 /* AboutListView.swift */,
-				13BDDAFD2C535CC200B59D14 /* AboutScreen.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EAD8972C566B280033C6AA /* ArticlesScreen.swift in Sources */,
 				13BDDAFC2C5358E100B59D14 /* AboutListView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
