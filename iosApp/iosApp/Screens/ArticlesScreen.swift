@@ -41,11 +41,11 @@ struct ArticlesScreen: View {
         VStack{
             AppBar()
             
-            if viewModel.articlesState.Loading{
+            if viewModel.articlesState.loading{
                 Loader()
             }
             
-            if let error = viewModel.articelsState.error{
+            if let error = viewModel.articlesState.error {
                 ErrorMessage(message: error)
             }
             
@@ -70,7 +70,7 @@ struct ArticleItemView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            AsyncImage(url: URL(string: article.imageURL)) {phase in
+            AsyncImage(url: URL(string: article.imageUrl)) {phase in
                 if phase.image != nil{
                     phase.image!
                         .resizable()
@@ -83,7 +83,7 @@ struct ArticleItemView: View {
             }
             Text(article.title).font(.title).fontWeight(.bold)
             Text(article.desc)
-            Text(article.date).frame(maxWidth: .infinity, Alignment.trailing).foregroundStyle(.gray)
+            Text(article.date).frame(maxWidth: .infinity, alignment: .trailing).foregroundStyle(.gray)
         }.padding(16)
     }
 }
