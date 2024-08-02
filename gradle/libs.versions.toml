@@ -3,13 +3,15 @@ agp = "8.3.0"
 coilCompose = "2.5.0"
 kotlin = "2.0.0"
 compose = "1.5.1"
-compose-material3 = "1.1.2"
+compose-material3 = "1.2.1"
 androidx-activityCompose = "1.7.2"
 kotlinxCoroutinesCore = "1.7.3"
 lifecycleViewmodelKtx = "2.8.4"
+navigationCompose = "2.7.7"
 
 [libraries]
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
