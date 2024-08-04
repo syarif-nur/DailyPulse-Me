@@ -6,6 +6,7 @@ class ArticlesRepository(
 ) {
     suspend fun getArticles(): List<ArticleRaw>{
         val articlesDb = dataSource.getAllArticles()
+        println("Got ${articlesDb.size} from database")
 
         if(articlesDb.isEmpty()){
             val fetchedArticles = service.fetchArticles()
