@@ -6,7 +6,7 @@ import come.threedotz.dailypulse.db.DailyPulseDatabase
 
 actual class DatabaseDriverFactory() {
     actual fun createDriver(): SqlDriver = NativeSqliteDriver(
-        schema = DailyPulseDatabase,
+        schema = DailyPulseDatabase.Schema,
         name = "DailyPulseDatabase.db"
     )
 }

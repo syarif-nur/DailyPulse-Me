@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
+		13BCD0112C5FE8B200DB61A5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BCD0102C5FE8B200DB61A5 /* libsqlite3.tbd */; };
 		13BDDAFC2C5358E100B59D14 /* AboutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BDDAFB2C5358E100B59D14 /* AboutListView.swift */; };
 		13BDDAFE2C535CC200B59D14 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BDDAFD2C535CC200B59D14 /* AboutScreen.swift */; };
 		13EAD8972C566B280033C6AA /* ArticlesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EAD8962C566B280033C6AA /* ArticlesScreen.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		13BCD0102C5FE8B200DB61A5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		13BDDAFB2C5358E100B59D14 /* AboutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutListView.swift; sourceTree = "<group>"; };
 		13BDDAFD2C535CC200B59D14 /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		13EAD8962C566B280033C6AA /* ArticlesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesScreen.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BCD0112C5FE8B200DB61A5 /* libsqlite3.tbd in Frameworks */,
 				B4D38BF24DE21E634F9348DB /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +108,7 @@
 		A6F73FCBAB17271045AFE087 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13BCD0102C5FE8B200DB61A5 /* libsqlite3.tbd */,
 				30A83B2D509F519CF2D36485 /* Pods_iosApp.framework */,
 			);
 			name = Frameworks;
