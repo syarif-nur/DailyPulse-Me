@@ -30,6 +30,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.SwipeRefreshState
 import com.threedotz.dailypulse.articles.Article
 import com.threedotz.dailypulse.articles.ArticlesViewModel
 import org.koin.androidx.compose.getViewModel
@@ -43,12 +45,12 @@ fun ArticlesScreen(
 
     Column {
         AppBar(onAboutButtonClick)
-        if (articleState.value.loading)
-            Loader()
+//        if (articleState.value.loading)
+//            Loader()
         if (articleState.value.error != null)
             ErrorMessage(articleState.value.error!!)
         if (articleState.value.articles.isNotEmpty())
-            ArticlesListView(articlesViewModel.articlesState.value.articles)
+            ArticlesListView(articlesViewModel)
     }
 }
 
@@ -59,27 +61,29 @@ private fun AppBar(
 ) {
     TopAppBar(title = { Text(text = "Articles") }, actions = {
         IconButton(onClick = onAboutButtonClick) {
-            Icon(imageVector = Icons.Outlined.Info,
-                contentDescription = "About Device Button")
+            Icon(
+                imageVector = Icons.Outlined.Info,
+                contentDescription = "About Device Button"
+            )
         }
     })
 
 }
 
-@Composable
-fun Loader() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        CircularProgressIndicator(
-            modifier = Modifier.width(64.dp),
-            color = MaterialTheme.colorScheme.surfaceVariant,
-            trackColor = MaterialTheme.colorScheme.secondary
-        )
-
-    }
-}
+//@Composable
+//fun Loader() {
+//    Box(
+//        modifier = Modifier.fillMaxSize(),
+//        contentAlignment = Alignment.Center
+//    ) {
+//        CircularProgressIndicator(
+//            modifier = Modifier.width(64.dp),
+//            color = MaterialTheme.colorScheme.surfaceVariant,
+//            trackColor = MaterialTheme.colorScheme.secondary
+//        )
+//
+//    }
+//}
 
 @Composable
 fun ErrorMessage(message: String) {
@@ -95,10 +99,15 @@ fun ErrorMessage(message: String) {
 }
 
 @Composable
-fun ArticlesListView(articles: List<Article>) {
-    LazyColumn(modifier = Modifier.fillMaxSize()) {
-        items(articles) { article ->
-            ArticleItemView(article = article)
+fun ArticlesListView(viewModel: ArticlesViewModel) {
+
+    SwipeRefresh(
+        state = SwipeRefreshState(viewModel.articlesState.value.loading),
+        onRefresh = { viewModel.getArticles(true) }) {
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            items(viewModel.articlesState.value.articles) { article ->
+                ArticleItemView(article = article)
+            }
         }
     }
 }
