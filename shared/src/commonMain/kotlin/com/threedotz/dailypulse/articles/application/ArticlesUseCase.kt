@@ -1,5 +1,7 @@
-package com.threedotz.dailypulse.articles
+package com.threedotz.dailypulse.articles.application
 
+import com.threedotz.dailypulse.articles.data.ArticleRaw
+import com.threedotz.dailypulse.articles.data.ArticlesRepository
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone

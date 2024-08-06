@@ -1,4 +1,4 @@
-package com.threedotz.dailypulse.articles
+package com.threedotz.dailypulse.articles.data
 
 import come.threedotz.dailypulse.db.DailyPulseDatabase
 

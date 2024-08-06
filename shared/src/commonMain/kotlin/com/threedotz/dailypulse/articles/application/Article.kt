@@ -1,4 +1,4 @@
-package com.threedotz.dailypulse.articles
+package com.threedotz.dailypulse.articles.application
 
 data class Article (
     val title: String,

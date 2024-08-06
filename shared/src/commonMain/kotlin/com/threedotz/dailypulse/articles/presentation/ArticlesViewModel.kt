@@ -1,14 +1,10 @@
-package com.threedotz.dailypulse.articles
+package com.threedotz.dailypulse.articles.presentation
 
 import com.threedotz.dailypulse.BaseViewModel
-import io.ktor.client.HttpClient
-import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.serialization.kotlinx.json.json
-import kotlinx.coroutines.delay
+import com.threedotz.dailypulse.articles.application.ArticlesUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import kotlinx.serialization.json.Json
 
 class ArticlesViewModel(private val useCase: ArticlesUseCase) : BaseViewModel() {
 

@@ -5,12 +5,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.threedotz.dailypulse.articles.ArticlesViewModel
 import androidx.navigation.compose.rememberNavController
 import com.threedotz.dailypulse.android.screens.AboutScreen
 import com.threedotz.dailypulse.android.screens.ArticlesScreen

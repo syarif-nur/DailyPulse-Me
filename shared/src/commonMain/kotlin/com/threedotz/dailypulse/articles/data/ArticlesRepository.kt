@@ -1,4 +1,4 @@
-package com.threedotz.dailypulse.articles
+package com.threedotz.dailypulse.articles.data
 
 class ArticlesRepository(
     private val dataSource: ArticlesDataSource,

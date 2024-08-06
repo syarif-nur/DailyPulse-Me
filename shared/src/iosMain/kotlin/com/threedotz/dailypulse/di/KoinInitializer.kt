@@ -1,9 +1,8 @@
 package com.threedotz.dailypulse.di
 
-import com.threedotz.dailypulse.articles.ArticlesViewModel
+import com.threedotz.dailypulse.articles.presentation.ArticlesViewModel
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
-import org.koin.core.context.KoinContext
 import org.koin.core.context.startKoin
 
 fun initKoin(){

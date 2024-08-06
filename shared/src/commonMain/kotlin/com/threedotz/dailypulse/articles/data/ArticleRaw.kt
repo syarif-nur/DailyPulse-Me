@@ -1,4 +1,4 @@
-package com.threedotz.dailypulse.articles
+package com.threedotz.dailypulse.articles.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
