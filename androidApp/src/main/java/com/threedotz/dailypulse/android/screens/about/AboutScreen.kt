@@ -1,4 +1,4 @@
-package com.threedotz.dailypulse.android.screens
+package com.threedotz.dailypulse.android.screens.about
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

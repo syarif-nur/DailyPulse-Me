@@ -4,6 +4,7 @@ import shared
 struct ContentView: View {
     
     @State private var shouldOpenAbout = false
+    @State private var shouldOpenSource = false
     
     var body: some View {
         
@@ -12,6 +13,16 @@ struct ContentView: View {
         NavigationStack{
             articlesScreen
                 .toolbar{
+                    ToolbarItem{
+                        Button{
+                            shouldOpenSource = true
+                        } label: {
+                            Label("Source", systemImage: "list.bullet.rectangle").labelStyle(.titleAndIcon )
+                        }
+                        .popover(isPresented: $shouldOpenSource, content: {
+                            SourcesScreen()
+                        })
+                    }
                     ToolbarItem{
                         Button{
                             shouldOpenAbout = true

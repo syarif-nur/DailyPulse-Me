@@ -9,9 +9,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.threedotz.dailypulse.android.screens.AboutScreen
-import com.threedotz.dailypulse.android.screens.ArticlesScreen
+import com.threedotz.dailypulse.android.screens.about.AboutScreen
+import com.threedotz.dailypulse.android.screens.article.ArticlesScreen
 import com.threedotz.dailypulse.android.screens.Screens
+import com.threedotz.dailypulse.android.screens.source.SourceScreen
 
 @Composable
 fun AppScaffold() {
@@ -35,11 +36,16 @@ fun AppNavHost(
     NavHost(navController = navController, startDestination = Screens.ARTICLES.route, modifier) {
         composable(Screens.ARTICLES.route) {
             ArticlesScreen(
-                onAboutButtonClick = { navController.navigate(Screens.ABOUT_DEVICE.route) }
+                onAboutButtonClick = { navController.navigate(Screens.ABOUT_DEVICE.route) },
+                onSourcesButtonClick = { navController.navigate(Screens.SOURCES.route) }
             )
         }
         composable(Screens.ABOUT_DEVICE.route) {
             AboutScreen(onUpButtonClick = { navController.popBackStack() })
+        }
+        composable(Screens.SOURCES.route) {
+            SourceScreen(onUpButtonClick = { navController.popBackStack() }
+            )
         }
     }
 }

@@ -94,17 +94,3 @@ struct AppBar: View{
     }
 }
 
-struct Loader: View{
-    var body: some View{
-        ProgressView()
-    }
-}
-
-struct ErrorMessage: View {
-    var message: String
-    
-    var body: some View {
-        Text(message).font(.title)
-    }
-}
-
