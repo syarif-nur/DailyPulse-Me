@@ -9,10 +9,26 @@ insertArticle:
 INSERT INTO Article(title, desc, date, imageUrl)
 VALUES(?,?,?,?);
 
-
 selectAllArticles:
 SELECT Article.*
 FROM Article;
 
 removeAllArticles:
 DELETE FROM Article;
+
+CREATE TABLE Source (
+    name TEXT NOT NULL,
+    desc TEXT NOT NULL,
+    language TEXT NOT NULL,
+    country TEXT NOT NULL
+);
+
+insertSource:
+INSERT INTO Source(name,desc,language,country)
+VALUES (?,?,?,?);
+
+selectAllSources:
+SELECT Source.* FROM  Source;
+
+removeAllSources:
+DELETE FROM Source;
