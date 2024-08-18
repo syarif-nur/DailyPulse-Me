@@ -46,6 +46,7 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             implementation(libs.koin.core)
             implementation(libs.sql.coroutines.extensions)
+            implementation("co.touchlab:stately-common:2.0.5")
         }
         androidMain.dependencies {
             implementation(libs.androidx.lifecycle.viewmodel.ktx)

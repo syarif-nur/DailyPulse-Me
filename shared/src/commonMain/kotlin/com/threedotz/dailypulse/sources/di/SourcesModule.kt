@@ -8,6 +8,7 @@ import com.threedotz.dailypulse.sources.application.SourcesUseCase
 import com.threedotz.dailypulse.sources.data.SourcesDataSource
 import com.threedotz.dailypulse.sources.data.SourcesRepository
 import com.threedotz.dailypulse.sources.data.SourcesService
+import com.threedotz.dailypulse.sources.presentation.SourcesViewModel
 import org.koin.dsl.module
 
 val sourcesModule = module {
