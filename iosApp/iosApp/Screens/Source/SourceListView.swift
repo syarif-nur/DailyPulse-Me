@@ -11,24 +11,24 @@ import shared
 
 
 struct SourceListView: View {
-    @EnvironmentObject var viewModel: SourcesScreen.ArticlesViewModelWrapper
+    @EnvironmentObject var viewModel: SourcesScreen.SourcesViewModelWrapper
     
     var body: some View {
         VStack{
             
-            if viewModel.articlesState.loading{
+            if viewModel.sourcesState.loading{
                 Loader()
             }
             
-            if let error = viewModel.articlesState.error {
+            if let error = viewModel.sourcesState.error {
                 ErrorMessage(message: error)
             }
             
-            if(!viewModel.articlesState.articles.isEmpty){
+            if(!viewModel.sourcesState.sources.isEmpty){
                 ScrollView{
                     LazyVStack(spacing:10){
-                        ForEach(viewModel.articlesState.articles, id:\.self){
-                            article in SourceItemView(article: article)
+                        ForEach(viewModel.sourcesState.sources, id:\.self){
+                            source in SourceItemView(source: source)
                         }
                     }
                 }
@@ -41,24 +41,24 @@ struct SourceListView: View {
 }
 
 struct SourceItemView: View {
-    var article: Article
+    var source: Source
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            AsyncImage(url: URL(string: article.imageUrl)) {phase in
-                if phase.image != nil{
-                    phase.image!
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }else if phase.error != nil{
-                    Text("Image Error")
-                }else{
-                    ProgressView()
-                }
-            }
-            Text(article.title).font(.title).fontWeight(.bold)
-            Text(article.desc)
-            Text(article.date).frame(maxWidth: .infinity, alignment: .trailing).foregroundStyle(.gray)
+//            AsyncImage(url: URL(string: source.imageUrl)) {phase in
+//                if phase.image != nil{
+//                    phase.image!
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                }else if phase.error != nil{
+//                    Text("Image Error")
+//                }else{
+//                    ProgressView()
+//                }
+//            }
+            Text(source.name).font(.title).fontWeight(.bold)
+            Text(source.desc)
+            Text(source.langCountry).frame(maxWidth: .infinity, alignment: .trailing).foregroundStyle(.gray)
         }.padding(16)
     }
 }

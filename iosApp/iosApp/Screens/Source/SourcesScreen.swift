@@ -12,21 +12,21 @@ import shared
 extension SourcesScreen{
     
     @MainActor
-    class ArticlesViewModelWrapper: ObservableObject {
-        let articlesViewModel: ArticlesViewModel
+    class SourcesViewModelWrapper: ObservableObject {
+        let sourcesViewModel: SourcesViewModel
         
         
         init() {
-            articlesViewModel = ArticlesInjector().articlesViewModel
-            articlesState = articlesViewModel.articlesState.value
+            sourcesViewModel = SourcesInjector().sourcesViewModel
+            sourcesState = sourcesViewModel.sourceState.value
         }
         
-        @Published var articlesState: ArticlesState
+        @Published var sourcesState: SourcesState
         
         func startObserving() {
             Task {
-                for await articlesS in articlesViewModel.articlesState {
-                    self.articlesState = articlesS
+                for await sourcesS in sourcesViewModel.sourceState {
+                    self.sourcesState = sourcesS
                 }
             }
         }
@@ -37,7 +37,7 @@ extension SourcesScreen{
 struct SourcesScreen: View {
     @Environment(\.dismiss)
     private var dismiss
-    @StateObject private var viewModelWrapper = ArticlesViewModelWrapper()
+    @StateObject private var viewModelWrapper = SourcesViewModelWrapper()
     
     var body: some View{
         NavigationStack{
