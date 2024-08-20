@@ -24,28 +24,27 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImage
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshState
 import com.threedotz.dailypulse.android.helper.ErrorMessage
-import com.threedotz.dailypulse.articles.application.Article
-import com.threedotz.dailypulse.articles.presentation.ArticlesViewModel
+import com.threedotz.dailypulse.sources.application.Source
+import com.threedotz.dailypulse.sources.presentation.SourcesViewModel
 import org.koin.androidx.compose.getViewModel
 
 
 @Composable
 fun SourceScreen(
     onUpButtonClick: () -> Unit,
-    articlesViewModel: ArticlesViewModel = getViewModel()
+    sourcesViewModel: SourcesViewModel = getViewModel()
 ) {
-    val articleState = articlesViewModel.articlesState.collectAsState()
+    val articleState = sourcesViewModel.sourceState.collectAsState()
 
     Column {
         Toolbar(onUpButtonClick)
         if (articleState.value.error != null)
             ErrorMessage(articleState.value.error!!)
-        if (articleState.value.articles.isNotEmpty())
-            SourcesListView(articlesViewModel)
+        if (articleState.value.sources.isNotEmpty())
+            SourcesListView(sourcesViewModel)
     }
 
 }
@@ -67,37 +66,37 @@ private fun Toolbar(
 
 
 @Composable
-fun SourcesListView(viewModel: ArticlesViewModel) {
+fun SourcesListView(viewModel: SourcesViewModel) {
 
     SwipeRefresh(
-        state = SwipeRefreshState(viewModel.articlesState.value.loading),
-        onRefresh = { viewModel.getArticles(true) }) {
+        state = SwipeRefreshState(viewModel.sourceState.value.loading),
+        onRefresh = { viewModel.getSources(true) }) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(viewModel.articlesState.value.articles) { article ->
-                SourceItemView(article = article)
+            items(viewModel.sourceState.value.sources) { sources ->
+                SourceItemView(source = sources)
             }
         }
     }
 }
 
 @Composable
-fun SourceItemView(article: Article) {
+fun SourceItemView(source: Source) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
     ) {
-        AsyncImage(model = article.imageUrl, contentDescription = null)
-        Spacer(modifier = Modifier.height(4.dp))
+//        AsyncImage(model = article.imageUrl, contentDescription = null)
+//        Spacer(modifier = Modifier.height(4.dp))
         Text(
-            text = article.title,
+            text = source.name,
             style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 22.sp)
         )
         Spacer(modifier = Modifier.height(8.dp))
-        Text(text = article.desc)
+        Text(text = source.desc)
         Spacer(modifier = Modifier.height(4.dp))
         Text(
-            text = article.date,
+            text = source.langCountry,
             style = TextStyle(Color.Gray),
             modifier = Modifier.align(Alignment.End)
         )
